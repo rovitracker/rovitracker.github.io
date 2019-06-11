@@ -1,1 +1,8 @@
-theme: jekyll-theme-cayman
+name: RoviTracker Developers
+baseurl: ''
+description: Developer docs
+highlighter: rouge
+docs: true
+version: 0.1.0-SNAPSHOT
+org: default
+markdown: kramdown
