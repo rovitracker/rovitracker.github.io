@@ -7,7 +7,7 @@ weight: 3
 
 # Integration
 
-RoviTracker provides programmatic access to data through AEMP API endpoints.
+RoviTracker provides programmatic access to data through REST/JSON endpoints.
 
 ## Requests
 
@@ -21,5 +21,6 @@ replacing `ACCESS_TOKEN` with the value obtained by step 4 of the authorization 
 
 To request data, you must make an HTTP GET to: 
 
-- https://api.rovitracker.com/v1/embed-urls
+- https://api.rovitracker.com/v1/branch/current/urls
+- https://api.rovitracker.com/v1/branch/current/assets
 
