@@ -1,6 +1,6 @@
 ---
 layout: doc
-title:  "Integration"
+title:  "Rovi API"
 section: "home"
 weight: 3
 ---

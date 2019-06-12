@@ -16,9 +16,7 @@ Start here: [Authorization](/authorization.html)
 
 ## APIs
 
-Your RoviTracker data is accessible through the [AEMP API](/aemp_api.html)
-
-## Integration
-
-Check [Integration](/integration.html)
+Your RoviTracker data is accessible through:
+ - [Rovi API](/rovi_api.html)
+ - [AEMP API](/aemp_api.html)
 
