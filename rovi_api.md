@@ -40,8 +40,7 @@ JSON object with the following keys:
 ```curl
 curl -X GET \
   https://api.rovitracker.com/v1/branch/current/urls \
-  -H 'Authorization: Bearer c3a56f16464a9c16dde83fca462c346f' \
-  -H 'Host: api.rovitracker.com'
+  -H 'Authorization: Bearer c3a56f16464a9c16dde83fca462c346f' 
 ```
 ```json
 {
@@ -64,8 +63,7 @@ JSON object with the following keys:
 ```curl
 curl -X GET \
   'https://api.rovitracker.com/v1/branch/current/batch/assetUrls?assets=thing:1,thing:2,thing:3' \
-  -H 'Authorization: Bearer c3a56f16464a9c16dde83fca462c346f' \
-  -H 'Host: api.rovitracker.com'
+  -H 'Authorization: Bearer c3a56f16464a9c16dde83fca462c346f'
 ```
 ```json
 {
@@ -116,8 +114,7 @@ It can have any combination of the following metrics:
 ```
 curl -X GET \
   https://api.rovitracker.com/v1/branch/current/assets \
-  -H 'Authorization: Bearer c3a56f16464a9c16dde83fca462c346f' \
-  -H 'Host: api.rovitracker.com' 
+  -H 'Authorization: Bearer c3a56f16464a9c16dde83fca462c346f'
 ```
 ```json
 [
