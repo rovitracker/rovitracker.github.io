@@ -19,18 +19,12 @@ replacing `ACCESS_TOKEN` with the value obtained by step 4 of the authorization 
 
 ## Endpoints
 
-To request data, you must make an HTTP GET to: 
-
-- https://api.rovitracker.com/v1/branch/current/urls
-- https://api.rovitracker.com/v1/branch/current/assets
-- https://api.rovitracker.com/v1/branch/current/batch/assetUrls?assets=thing:1,thing:2,thing:3
-
-
-## Samples (replace with your access token):
+To request data, you must make an HTTP GET one of the available endpoins. 
 All requests should be made using this following prefix:
 ```
 https://api.rovitracker/v1
 ```
+
 
 ### `GET /branch/current/urls`
 
@@ -102,7 +96,8 @@ The `metrics` object will have entries following this pattern:
         collectedOn: $timestamp,
         ... others
       }
-    }
+    },
+    ...
   }
 }
 ```
