@@ -58,7 +58,7 @@ Get URLs that only show data for a subset of assets. URLs in the response will c
 
 #### Response
 JSON object with the following keys:
-- `maptracEmbed`: Embeddable URL showing all of the branch's assets in a map.
+- `maptracEmbed`: Embeddable URL showing only the requested assets in a map.
 
 #### Sample
 ```curl
