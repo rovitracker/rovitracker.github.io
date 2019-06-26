@@ -52,7 +52,7 @@ The registration process only happens once at the beginning:
     * `REDIRECT_URI` is the URL provided by the `Application` in step 1.
     * `STATE` will be the same value provided by the `Application` in step 1.
 4. `Application` takes the `AUTHORIZATION_CODE` from the query string parameter and exchanges it for an `access_token` by making an HTTP
-    POST request with `ContentType: application/x-www-form-urlencoded` to: https://app.rovitracker.com/app/oauth2/token with body parameters of: 
+    POST request with `ContentType: application/x-www-form-urlencoded` to: `https://app.rovitracker.com/app/oauth2/token` with body parameters of: 
     * `client_id`: Value obtained through registration process.
     * `client_secret`: Value obtrained through registration process.
     * `code`: Authorization code obtained through redirect (step 3).
