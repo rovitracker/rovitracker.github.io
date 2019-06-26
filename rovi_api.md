@@ -23,40 +23,108 @@ To request data, you must make an HTTP GET to:
 
 - https://api.rovitracker.com/v1/branch/current/urls
 - https://api.rovitracker.com/v1/branch/current/assets
+- https://api.rovitracker.com/v1/branch/current/batch/assetUrls?assets=thing:1,thing:2,thing:3
 
 
 ## Samples (replace with your access token):
-URLS:
+All requests should be made using this following prefix:
 ```
+https://api.rovitracker/v1
+```
+
+### `GET /branch/current/urls`
+
+Get URLs for the branch. Only contains the `maptracEmbed` key at the moment. URLs in the response will create a embed session on the user's browser lasting 1 hour.
+
+#### Response
+JSON object with the following keys:
+- `maptracEmbed`: Embeddable URL showing all of the branch's assets in a map.
+
+
+#### Sample 
+
+```curl
 curl -X GET \
   https://api.rovitracker.com/v1/branch/current/urls \
   -H 'Authorization: Bearer c3a56f16464a9c16dde83fca462c346f' \
   -H 'Host: api.rovitracker.com'
-
+```
+```json
 {
 	"maptracEmbed": "https://app.rovitracker.com/app/embed/auth?req=%2Fapp%2Fembed%2Fmaptrac&jws=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NyIsImV4cCI6MTU2MTU3OTUxM30.CqZlLWqwppyk5pbD1OKjUgYerqsvKzr2DPSEbZMMA58"
 }
 ```
 
-BATCH URLS:
-```
+### `GET /branch/current/batch/assetUrls`
+
+Get URLs that only show data for a subset of assets. URLs in the response will create a embed session on the user's browser lasting 1 hour.
+
+#### Query Parameters
+- `assets`: Comma-delimited list of asset ids. Ex: `thing:34,thing:32,thing:4`
+
+#### Response
+JSON object with the following keys:
+- `maptracEmbed`: Embeddable URL showing all of the branch's assets in a map.
+
+#### Sample
+```curl
 curl -X GET \
   'https://api.rovitracker.com/v1/branch/current/batch/assetUrls?assets=thing:1,thing:2,thing:3' \
   -H 'Authorization: Bearer c3a56f16464a9c16dde83fca462c346f' \
   -H 'Host: api.rovitracker.com'
-
+```
+```json
 {
 	"maptracEmbed": "https://app.rovitracker.com/app/embed/auth?req=%2Fapp%2Fembed%2Fmaptrac%23assets%3Dthing%3A1%2Cthing%3A2%2Cthing%3A3&jws=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2NyIsImV4cCI6MTU2MTU3OTgzMn0.jMheVYH87CHxUBPbWhgfv7DiNXAY3xxzFD_S-khsyTE"
 }
 ```
 
-ASSETS:
+### `GET /branch/current/assets` 
+
+Return a list of assets belonging to the branch.
+
+#### Response
+JSON array where each element has the following keys:
+- `assetId : string` - RoviTracker ID of the asset
+- `type : "thing"|"area"` - Asset type
+- `name : string` - Name given to the asset by the customer
+- `serialNumber : string` - Only available on assets of type `thing`.
+- `category : string` - Customer-defined category that the asset belongs to. Only available on assets of type `thing`
+- `urls : json object` - JSON object with entries for URLs pointing to this asset.
+- `metrics : (object | null)`: JSON object with entries for each of the most recent metrics collected for the equipment. `null` if no metrics have been collected.
+
+The `metrics` object will have entries following this pattern:
+```json
+  {
+    $metricName: {
+      value: $metricValue,
+      meta: {
+        collectedOn: $timestamp,
+        ... others
+      }
+    }
+  }
+}
+```
+
+It can have any combination of the following metrics:
+- `fuel` [`number`, 0 to 100] - Amount of fuel as a percentage
+- `ignition` [`boolean`] - `true` if ignition is on
+- `gps` [`{"lat":number,"lng":number}`] - Last know position
+- `engine-runtime` [`number`, milliseconds]
+- `light1-runtime` [`number`, milliseconds]
+- `odometer` [`number`, centimeters]
+- ... others
+
+#### Sample
+
 ```
 curl -X GET \
   https://api.rovitracker.com/v1/branch/current/assets \
   -H 'Authorization: Bearer c3a56f16464a9c16dde83fca462c346f' \
   -H 'Host: api.rovitracker.com' 
-
+```
+```json
 [
   {
     "assetId":"thing:1138",
