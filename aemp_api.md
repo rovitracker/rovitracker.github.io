@@ -22,7 +22,7 @@ replacing `ACCESS_TOKEN` with the value obtained by step 4 of the authorization 
 To request data, you must make an HTTP GET to: 
 
 - https://aemp.rovitracker.com/api/v2/Fleet{page}
-- https://aemp.rovitracker.com/api/v2/Fleet/{equipmentName}
-- https://aemp.rovitracker.com/api/v2/Fleet/{equipmentName}/{startDate}/{endDate}
+- https://aemp.rovitracker.com/api/v2/Fleet/{equipmentID}
+- https://aemp.rovitracker.com/api/v2/Fleet/{equipmentID}/{startDate}/{endDate}
 
 
