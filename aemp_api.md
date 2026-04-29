@@ -17,15 +17,13 @@ Every request must include an authorization header:
 
 replacing `ACCESS_TOKEN` with the value obtained by step 4 of the authorization process.
 
-## AEMP API Endpoints
+## API Endpoints
 
 To request data, make an HTTP `GET` to the appropriate endpoints.
 
 ---
 
-## AEMP 1.2
-
-### Endpoints
+### AEMP 1.2
 
 **Paginated fleet data**
 ```
@@ -44,9 +42,7 @@ GET https://aemp.rovitracker.com/api/Fleet/{vin}/{startDate}/{endDate}
 
 ---
 
-## AEMP 2.0
-
-### Endpoints
+### AEMP 2.0
 
 **Paginated fleet data**
 ```
@@ -65,7 +61,7 @@ GET https://aemp.rovitracker.com/api/v2/Fleet/{equipmentID}/{startDate}/{endDate
 
 ---
 
-## Path Parameters
+### Path Parameters
 
 | Parameter | Description |
 |---|---|
