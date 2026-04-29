@@ -25,7 +25,7 @@ To request data, make an HTTP `GET` to the appropriate endpoints.
 
 ### AEMP 1.2
 
-**Paginated fleet data**
+**Paginated fleet data (Fleet Details URL)**
 ```
 GET https://aemp.rovitracker.com/api/Fleet/{page}
 ```
@@ -44,7 +44,7 @@ GET https://aemp.rovitracker.com/api/Fleet/{vin}/{startDate}/{endDate}
 
 ### AEMP 2.0
 
-**Paginated fleet data**
+**Paginated fleet data (Fleet Details URL)**
 ```
 GET https://aemp.rovitracker.com/api/v2/Fleet/{page}
 ```
