@@ -69,10 +69,10 @@ GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/Location/{s
 
 ### Path Parameters
 
-| Parameter      | Description                                           |
-| -------------- | ----------------------------------------------------- |
-| `{page}`       | Page number for paginated results                     |
-| `{vin}`        | Vehicle Identification Number _(AEMP 1.2)_            |
-| `{identifier}` | Equipment ID (also Serial Number or VIN) _(AEMP 2.0)_ |
-| `{startDate}`  | Start of the date range                               |
-| `{endDate}`    | End of the date range                                 |
+| Parameter      | Description                                                  |
+| -------------- | ------------------------------------------------------------ |
+| `{page}`       | Page number for paginated results                            |
+| `{vin}`        | Vehicle Identification Number _(AEMP 1.2)_                   |
+| `{identifier}` | Equipment ID (also Serial Number or VIN) _(AEMP 2.0)_        |
+| `{startDate}`  | Start of the date range - ISO8601 (Ex: 2026-08-23T01:31:01Z) |
+| `{endDate}`    | End of the date range - ISO8601 (Ex: 2026-08-23T01:31:01Z)   |
