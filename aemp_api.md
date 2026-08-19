@@ -62,7 +62,7 @@ GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/{startDate}
 **Single unit location updates by equipment ID — date range**
 
 ```
-GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/{startDate}/{endDate}
+GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/Location/{startDate}/{endDate}
 ```
 
 ---
