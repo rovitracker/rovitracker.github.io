@@ -1,6 +1,6 @@
 ---
 layout: doc
-title:  "AEMP API"
+title: "AEMP API"
 section: "home"
 weight: 4
 ---
@@ -26,18 +26,15 @@ To request data, make an HTTP `GET` to the appropriate endpoints.
 ### AEMP 1.2
 
 **Paginated fleet data (Fleet Details URL)**
+
 ```
-GET https://aemp.rovitracker.com/api/Fleet/{page}
+GET https://aemp.rovitracker.com/api/v1/Fleet/{page}
 ```
 
 **Single unit by VIN**
-```
-GET https://aemp.rovitracker.com/api/Fleet/{vin}
-```
 
-**Single unit by VIN — date range**
 ```
-GET https://aemp.rovitracker.com/api/Fleet/{vin}/{startDate}/{endDate}
+GET https://aemp.rovitracker.com/api/v1/Fleet/Equipment/{vin}
 ```
 
 ---
@@ -45,30 +42,37 @@ GET https://aemp.rovitracker.com/api/Fleet/{vin}/{startDate}/{endDate}
 ### AEMP 2.0
 
 **Paginated fleet data (Fleet Details URL)**
+
 ```
 GET https://aemp.rovitracker.com/api/v2/Fleet/{page}
 ```
 
 **Single unit by equipment ID**
+
 ```
-GET https://aemp.rovitracker.com/api/v2/Fleet/{equipmentID}
+GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}
 ```
 
 **Single unit by equipment ID — date range**
+
 ```
-GET https://aemp.rovitracker.com/api/v2/Fleet/{equipmentID}/{startDate}/{endDate}
+GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/{startDate}/{endDate}
+```
+
+**Single unit location updates by equipment ID — date range**
+
+```
+GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/{startDate}/{endDate}
 ```
 
 ---
 
 ### Path Parameters
 
-| Parameter | Description |
-|---|---|
-| `{page}` | Page number for paginated results |
-| `{vin}` | Vehicle Identification Number *(AEMP 1.2)* |
-| `{equipmentID}` | Unique equipment identifier *(AEMP 2.0)* |
-| `{startDate}` | Start of the date range |
-| `{endDate}` | End of the date range |
-
-
+| Parameter      | Description                                           |
+| -------------- | ----------------------------------------------------- |
+| `{page}`       | Page number for paginated results                     |
+| `{vin}`        | Vehicle Identification Number _(AEMP 1.2)_            |
+| `{identifier}` | Equipment ID (also Serial Number or VIN) _(AEMP 2.0)_ |
+| `{startDate}`  | Start of the date range                               |
+| `{endDate}`    | End of the date range                                 |
