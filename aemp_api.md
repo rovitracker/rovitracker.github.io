@@ -59,12 +59,29 @@ GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}
 GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/{startDate}/{endDate}
 ```
 
-**Single unit location updates by equipment ID — date range**
+**Single unit **Location** updates by equipment ID — date range**
 
 ```
 GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/Location/{startDate}/{endDate}
 ```
 
+**Single unit **CumulativeOperatingHours** updates by equipment ID - date range**
+
+```
+GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/CumulativeOperatingHours/{startDate}/{endDate}
+```
+
+**Single unit **Distance** updates by equipment ID - date range**
+
+```
+GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/Distance/{startDate}/{endDate}
+```
+
+**Single unit **FuelRemaining** updates by equipment ID - date range**
+
+```
+GET https://aemp.rovitracker.com/api/v2/Fleet/Equipment/{identifier}/FuelRemaining/{startDate}/{endDate}
+```
 ---
 
 ### Path Parameters
