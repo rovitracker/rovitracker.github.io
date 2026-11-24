@@ -57,7 +57,7 @@
                   </a>
                   -->
                   <a href='/' style='padding: 10px 20px; text-align: right'>
-                    <img src='https://rovitracker.com/assets/images/rovi-logo-white.png' style='float: left; width: 90px; margin-top: -10px; margin-right: 10px' /> Developers</a>
+                    <img src='{{ site.baseurl }}/img/rovi-logo-white.png' style='float: left; width: 90px; margin-top: -10px; margin-right: 10px' /> Developers</a>
                </li>
                {% if site.data.menu.options %}{% assign items = site.data.menu.options %}{% for x in items %} {% if x.menu_type.size == false or x.menu_type == page.section %}
                <li>
